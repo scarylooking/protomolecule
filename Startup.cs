@@ -18,15 +18,18 @@ namespace Protomolecule
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.SetupSwagger();
+            services.SetupAuth0(_configuration);
+            services.SetupControllersToAuthorizeByDefault();
+            services.SetupSwagger(_configuration);
         }
 
         public void Configure(IApplicationBuilder application, IWebHostEnvironment environment)
         {
-            application.ConfigureSwagger(environment)
+            application
+                .ConfigureSwagger(environment, _configuration)
                 .UseHttpsRedirection()
                 .UseRouting()
+                .UseAuthentication()
                 .UseAuthorization()
                 .UseMetricServer()
                 .UseHttpMetrics()
