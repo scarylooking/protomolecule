@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace Protomolecule
+// See https://dotnetcoretutorials.com/2021/02/14/using-auth0-with-an-asp-net-core-api-part-3-swagger/ for details
+
+namespace Protomolecule.Utility
 {
     public class SecurityRequirementsOperationFilter : IOperationFilter
 {

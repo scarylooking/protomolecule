@@ -15,7 +15,7 @@ namespace Protomolecule.Extensions
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Protomolecule v1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", configuration["Swagger:ApiName"]);
                     c.OAuthClientId(configuration["Authentication:Auth0:ClientId"]);
                 });
             }

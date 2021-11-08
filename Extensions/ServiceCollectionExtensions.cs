@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Protomolecule.Utility;
 
 namespace Protomolecule.Extensions
 {
@@ -15,7 +16,7 @@ namespace Protomolecule.Extensions
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Protomolecule", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = configuration["Swagger:ApiName"], Version = "v1" });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
