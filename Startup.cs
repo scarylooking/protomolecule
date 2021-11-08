@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Prometheus;
 using Protomolecule.Extensions;
 
 namespace Protomolecule
@@ -27,6 +28,8 @@ namespace Protomolecule
                 .UseHttpsRedirection()
                 .UseRouting()
                 .UseAuthorization()
+                .UseMetricServer()
+                .UseHttpMetrics()
                 .UseEndpoints(endpoints =>
                 {
                     endpoints.MapControllers();
