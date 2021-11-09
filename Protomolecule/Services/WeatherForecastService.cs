@@ -31,14 +31,20 @@ namespace Protomolecule.Services
 
         public IReadOnlyCollection<WeatherForecast> GetForecast()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.UtcNow.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
+            var random = new Random();
+
+            var forecasts = Enumerable.Range(1, 5)
+                .Select(index => new WeatherForecast
+                {
+                    Date = DateTime.UtcNow.AddDays(index),
+                    TemperatureC = random.Next(-20, 55),
+                    Summary = Summaries[random.Next(Summaries.Length)]
+                })
                 .ToArray();
+
+            _logger.LogDebug($"Generated {forecasts.Length} forecasts");
+
+            return forecasts;
         }
     }
 }

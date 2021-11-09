@@ -74,7 +74,7 @@ namespace Protomolecule.Extensions
 
         public static IServiceCollection SetupDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+            services.AddSingleton<IWeatherForecastService, WeatherForecastService>();
 
             return services;
         }
