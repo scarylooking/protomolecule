@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Protomolecule.Services;
 using Protomolecule.Utility;
 
 namespace Protomolecule.Extensions
@@ -41,6 +42,7 @@ namespace Protomolecule.Extensions
 
             return services;
         }
+
         public static IServiceCollection SetupAuth0(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAuthentication(options =>
@@ -55,6 +57,7 @@ namespace Protomolecule.Extensions
 
             return services;
         }
+
         public static IServiceCollection SetupControllersToAuthorizeByDefault(this IServiceCollection services)
         {
             services.AddControllers(o =>
@@ -65,6 +68,13 @@ namespace Protomolecule.Extensions
 
                 o.Filters.Add(new AuthorizeFilter(policy));
             });
+
+            return services;
+        }
+
+        public static IServiceCollection SetupDependencies(this IServiceCollection services)
+        {
+            services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
             return services;
         }

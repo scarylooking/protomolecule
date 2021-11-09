@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protomolecule", "Protomolecule.csproj", "{4D79FCB2-653F-423F-9870-3779AB0A79BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Protomolecule", "Protomolecule\Protomolecule.csproj", "{4D79FCB2-653F-423F-9870-3779AB0A79BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protomolecule.UnitTests", "Tests\Protomolecule.UnitTests\Protomolecule.UnitTests.csproj", "{89F13204-F1BE-4EE1-8606-1D44704FB38B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4D79FCB2-653F-423F-9870-3779AB0A79BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D79FCB2-653F-423F-9870-3779AB0A79BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D79FCB2-653F-423F-9870-3779AB0A79BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F13204-F1BE-4EE1-8606-1D44704FB38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F13204-F1BE-4EE1-8606-1D44704FB38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F13204-F1BE-4EE1-8606-1D44704FB38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F13204-F1BE-4EE1-8606-1D44704FB38B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

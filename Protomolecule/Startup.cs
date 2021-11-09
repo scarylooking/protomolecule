@@ -21,6 +21,7 @@ namespace Protomolecule
             services.SetupAuth0(_configuration);
             services.SetupControllersToAuthorizeByDefault();
             services.SetupSwagger(_configuration);
+            services.SetupDependencies();
         }
 
         public void Configure(IApplicationBuilder application, IWebHostEnvironment environment)
@@ -38,5 +39,7 @@ namespace Protomolecule
                     endpoints.MapControllers();
                 });
         }
+
+
     }
 }

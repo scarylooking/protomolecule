@@ -1,6 +1,6 @@
 using System;
 
-namespace Protomolecule.Services
+namespace Protomolecule.Models
 {
     public class WeatherForecast
     {
